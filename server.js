@@ -1,13 +1,18 @@
 const express = require('express');
 const path = require('path');
 const fs = require('fs');
+const uuid = require('uniqid');
 
 const app = express();
 
-
-
+// parse incoming string or array data
+app.use(express.urlencoded({ extended: true }));
+// parse incoming JSON data
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+
+
+
+
 //serves all public files from express server
 app.use(express.static(path.join(__dirname, 'public')));
 
