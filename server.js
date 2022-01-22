@@ -3,6 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const uuid = require('uniqid');
 
+const PORT = process.env.PORT || 3001;
 const app = express();
 
 // parse incoming string or array data
@@ -107,6 +108,6 @@ app.delete('/api/notes/:id', (req, res) => {
 
 
 
-app.listen(3001, () => {
-    console.log('Listening on port 3001!');
+app.listen(PORT, () => {
+    console.log(`API server now on port ${PORT}!`);
 });
